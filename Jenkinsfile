@@ -1,8 +1,30 @@
-node {
-    stage('one') {
-        sh 'echo Hello'
+// node {
+//     stage('one') {
+//         sh 'echo Hello'
+//     }
+//     stage('Two') {
+//             sh 'echo Hello'
+//         }
+// }
+//
+//
+
+
+pipeline {
+    agent any
+    agent none
+    agent {
+        node { 'node1' }
     }
-    stage('Two') {
-            sh 'echo Hello'
+    agent {
+        lable { 'ANSIBLE && CENTOS' }
+    }
+    stages {
+    stage('sample') {
+        agent { label 'UBUNTU' }
+        steps {
+            sh 'echo hello'
         }
+    }
+  }
 }
