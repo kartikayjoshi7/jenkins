@@ -5,17 +5,13 @@ pipeline {
         stage('One') {
             steps {
                 echo 'Hi, World'
+                echo 'One more Hello'
+                sh '''echo Hello World
+                echo Bye World
+                '''
+                mail bcc: '', body: 'Test', cc: '', from: '', replyTo: '', subject: 'Test', to: 'kartikay@local.com'
             }
         }
-        stage('Two') {
-            steps {
-                echo 'Hi, World'
-            }
-        }
-        stage('Three') {
-            steps {
-                echo 'Hi, World'
-            }
-        }
+
     }
 }
