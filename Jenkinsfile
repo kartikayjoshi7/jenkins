@@ -50,6 +50,7 @@ pipeline {
     environment {
     URL1 = "google.com"
     SSH = credentials("CENTOS")
+    SSH1 = credentials("common/ssh")
     }
     stages {
         stage ('ONE') {
@@ -57,6 +58,9 @@ pipeline {
                 sh 'echo ${URL1}'
                 sh 'env'
                 echo SSH
+                echo SSH1
+                 sh 'echo ${SSH1} | base64'
+
             }
 
         }
