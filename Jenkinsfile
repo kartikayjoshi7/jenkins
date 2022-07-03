@@ -122,22 +122,44 @@
 
 
 // input example, mostly used for approvals
+//
+// pipeline {
+//     agent any
+//     stages {
+//         stage('Example') {
+//             input {
+//                 message "Should we continue?"
+//                 ok "Yes, we should."
+//                 submitter "alice,bob"
+//                 parameters {
+//                     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+//                 }
+//             }
+//             steps {
+//                 echo "Hello, ${PERSON}, nice to meet you."
+//             }
+//         }
+//     }
+// }
+
+
+//when conditions
+
 
 pipeline {
     agent any
     stages {
-        stage('Example') {
-            input {
-                message "Should we continue?"
-                ok "Yes, we should."
-                submitter "alice,bob"
-                parameters {
-                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-                }
-            }
+        stage ('DEV') {
             steps {
-                echo "Hello, ${PERSON}, nice to meet you."
+                echo 'DEV'
             }
+
         }
+        stage ('PROD') {
+                    steps {
+                        echo 'PROD'
+                    }
+
+                }
     }
 }
