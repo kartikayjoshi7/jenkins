@@ -153,12 +153,19 @@ pipeline {
 }
     stages {
         stage ('DEV') {
+
+        when {
+        environment name: 'ENV', value: 'ENV'
+             }
             steps {
                 echo 'DEV'
             }
 
         }
         stage ('PROD') {
+        when {
+         environment name: 'PROD', value: 'PROD'
+          }
                     steps {
                         echo 'PROD'
                     }
