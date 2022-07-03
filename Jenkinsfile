@@ -190,7 +190,6 @@ pipeline {
       stages {
             stage ('Two-Parallel'){
               parallel {
-
               stage ('Two1') {
                 staps {
                     sh 'sleep 60'
@@ -205,8 +204,9 @@ pipeline {
               }
 
             }
-            }
 
+
+    }
     }
 }
 
