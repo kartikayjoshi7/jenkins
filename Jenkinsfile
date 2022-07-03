@@ -187,23 +187,23 @@ pipeline {
                sh 'sleep 56'
             }
         }
-      stages {
+
             stage ('Two-Parallel'){
               parallel {
               stage ('Two1') {
-                staps {
+                steps {
                     sh 'sleep 60'
                 }
               }
 
               stage ('Two2') {
-                staps {
+                steps {
                     sh 'sleep 90'
                 }
               }
               }
 
-            }
+
 
 
     }
