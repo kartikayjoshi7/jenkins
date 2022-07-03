@@ -49,12 +49,13 @@ pipeline {
     agent any
     environment {
     URL1 = "google.com"
+    SSH = credentials("CENTOS")
     }
     stages {
         stage ('ONE') {
             steps {
                 sh 'echo ${URL1}'
-                echo URL1
+                echo SSH
             }
 
         }
