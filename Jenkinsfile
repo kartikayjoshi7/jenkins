@@ -197,7 +197,6 @@ pipeline {
                 }
               }
 
-
               stage ('Two2') {
                 staps {
                     sh 'sleep 90'
