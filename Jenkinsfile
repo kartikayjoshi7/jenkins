@@ -54,6 +54,7 @@ pipeline {
         stage ('ONE') {
             steps {
                 sh 'echo $ {URL}'
+                echo URL
             }
 
         }
