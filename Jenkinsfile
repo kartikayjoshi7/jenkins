@@ -30,13 +30,30 @@
 // }
 
 
+// pipeline {
+//     agent any
+//     options { disableConcurrentBuilds() }
+//     stages {
+//         stage ('ONE') {
+//             steps {
+//                 sh 'sleep 10'
+//             }
+//
+//         }
+//     }
+// }
+
+
+
 pipeline {
     agent any
-    options { disableConcurrentBuilds() }
+    environment {
+    URL = "google.com"
+    }
     stages {
         stage ('ONE') {
             steps {
-                sh 'sleep 10'
+                sh 'echo $ {URL}'
             }
 
         }
