@@ -102,20 +102,42 @@
 
 //TOOLS EXAMPLE
 
+//
+// pipeline {
+//     agent {
+//      label 'WORKSTATION'
+//      }
+//      tools {
+//             maven 'maven-3.5.0'
+//         }
+//     stages {
+//         stage ('MAVEN') {
+//             steps {
+//                 sh 'mvn --version'
+//             }
+//
+//         }
+//     }
+// }
+
+
+// input example, mostly used for approvals
 
 pipeline {
-    agent {
-     label 'WORKSTATION'
-     }
-     tools {
-            maven 'maven-3.5.0'
-        }
+    agent any
     stages {
-        stage ('MAVEN') {
-            steps {
-                sh 'mvn --version'
+        stage('Example') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
             }
-
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
         }
     }
 }
