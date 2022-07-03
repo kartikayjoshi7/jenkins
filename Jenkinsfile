@@ -148,6 +148,9 @@
 
 pipeline {
     agent any
+    parameters {
+            choice(name: 'ENV', choices: ['DEV', 'PROD'], description: 'Choose Env')
+}
     stages {
         stage ('DEV') {
             steps {
