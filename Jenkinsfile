@@ -55,6 +55,7 @@ pipeline {
         stage ('ONE') {
             steps {
                 sh 'echo ${URL1}'
+                sh 'env'
                 echo SSH
             }
 
