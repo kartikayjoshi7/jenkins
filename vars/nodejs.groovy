@@ -21,7 +21,7 @@ def call() {
 
             stage('Lint checks') {
                 steps {
-                    sh 'echo Lint checks'
+                    sh 'echo lint checks'
                 }
             }
 

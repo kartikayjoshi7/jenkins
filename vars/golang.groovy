@@ -12,15 +12,13 @@ def call() {
 
             stage('Check the code quality') {
                 steps {
-                    script {
-                        common.sonarQube()
-                    }
+                    sh 'echo check the code quality'
                 }
             }
 
             stage('Lint checks') {
                 steps {
-                    sh '/home/centos/node_modules/eslint/bin/eslint.js .'
+                    sh 'echo Lint checks'
                 }
             }
 
