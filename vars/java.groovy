@@ -17,7 +17,9 @@ def call() {
             }
             stage('Check the code quality') {
                 steps {
-                   common.sonarQube("shipping", java)
+                    script {
+                        common.sonarQube("shipping", java)
+                    }
                 }
             }
 
