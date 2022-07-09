@@ -25,7 +25,7 @@ folder('CI-Pipelines') {
     description('CI-Pipelines')
 }
 
-def COMPONENTS = ["cart","catalogue"]
+def COMPONENTS = ["cart","catalogue", "payment","shipping","user","dispatch"]
 def SIZE = COMPONENTS.size -1
 
 for ( i in 0..SIZE )
