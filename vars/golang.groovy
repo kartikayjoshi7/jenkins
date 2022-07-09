@@ -12,7 +12,9 @@ def call() {
 
             stage('Check the code quality') {
                 steps {
-                    sh 'echo check the code quality'
+                    script {
+                        common.sonarQube()
+                    }
                 }
             }
 
