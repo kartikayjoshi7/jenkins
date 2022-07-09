@@ -20,7 +20,7 @@ def call() {
 
             stage('Lint checks') {
                 steps {
-                    sh 'echo Lint checks'
+                    sh '/home/centos/node_modules/eslint/bin/eslint.js .'
                 }
             }
 
