@@ -25,14 +25,17 @@ folder('CI-Pipelines') {
     description('CI-Pipelines')
 }
 
+def COMPONENTS = ["cart","catalogue"]
 
-pipelineJob('CI-Pipelines/cart') {
+for ( COMPONENT in COMPONENTS)
+{
+pipelineJob('CI-Pipelines/${COMPONENT}') {
     configure { flowdefinition ->
         flowdefinition << delegate.'definition'(class:'org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition',plugin:'workflow-cps') {
             'scm'(class:'hudson.plugins.git.GitSCM',plugin:'git') {
                 'userRemoteConfigs' {
                     'hudson.plugins.git.UserRemoteConfig' {
-                        'url'('https://github.com/kartikayjoshi7/cart.git')
+                        'url'('https://github.com/kartikayjoshi7/{COMPONENT}.git')
                     }
                 }
                 'branches' {
@@ -45,4 +48,5 @@ pipelineJob('CI-Pipelines/cart') {
             'lightweight'(true)
         }
     }
+}
 }
