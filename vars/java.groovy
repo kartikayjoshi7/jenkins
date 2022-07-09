@@ -12,7 +12,7 @@ def call() {
 
             stage('Compile the code') {
                 steps {
-                    sh 'echo compile the ${COMPONENT} code'
+                    sh 'mvn compile'
                 }
             }
             stage('Check the code quality') {
