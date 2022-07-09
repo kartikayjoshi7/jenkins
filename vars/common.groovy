@@ -20,11 +20,25 @@ def call() {
                     sh 'echo check the code quality'
                 }
             }
+
+            stage('Lint checks') {
+                steps {
+                    sh 'echo Lint checks'
+                }
+            }
+
             stage('Test cases') {
                 steps {
                     sh 'echo Test cases'
                 }
             }
         }
+        post {
+            always {
+                cleansws ()
+
+            }
+        }
     }
 }
+
