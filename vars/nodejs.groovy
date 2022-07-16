@@ -13,7 +13,8 @@ def call() {
             stage('Label Builds') {
                 steps {
                     script {
-                        addShortText background: '', borderColor: 'white', color: 'red', link: '', text: 'Demo'
+                        def gitTag = sh ([returnStdout:true, script : 'echo ${GIT_BRANCH} | grep tags || awk -F / "{print $NF}"'])
+                        addShortText background: '', borderColor: 'white', color: 'red', link: '', text: "${gitTag}"
                     }
                 }
             }
