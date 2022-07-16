@@ -10,7 +10,7 @@ def call() {
 
         stages {
 
-            stage {
+            stage ('Label Builds') {
                 script {
                     addShortText background: '', borderColor: 'white', color: 'red', link: '', text: 'Demo'
                 }
