@@ -10,6 +10,12 @@ def call() {
 
         stages {
 
+            stage {
+                script {
+                    addShortText background: '', borderColor: 'white', color: 'red', link: '', text: 'Demo'
+                }
+            }
+
 
             stage('Check the code quality') {
                 steps {
