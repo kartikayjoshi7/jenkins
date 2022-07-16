@@ -13,7 +13,7 @@ def call() {
             stage('Label Builds') {
                 steps {
                     script {
-                        def gitTag = GIT_BRANCH.spilt('/').last()
+                        def gitTag = GIT_BRANCH.split('/').last()
                         addShortText background: '', borderColor: 'white', color: 'red', link: '', text: "${gitTag}"
                     }
                 }
