@@ -32,10 +32,14 @@ def call() {
             }
 
             stage('Publish Artifacts') {
+                when {
+                    buildingTag()
+                }
                 steps {
                     script {
                        // common.publishArtifacts()
                         println 'Publish Artifacts'
+
                     }
                 }
             }
