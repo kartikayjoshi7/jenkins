@@ -30,6 +30,14 @@ def call() {
                     sh 'echo Test cases'
                 }
             }
+
+            stage('Publish Artifacts') {
+                steps {
+                    script {
+                        common.publishArtifacts()
+                    }
+                }
+            }
         }
         post {
             always {
