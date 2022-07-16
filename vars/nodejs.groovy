@@ -10,11 +10,14 @@ def call() {
 
         stages {
 
-            stage ('Label Builds') {
-                script {
-                    addShortText background: '', borderColor: 'white', color: 'red', link: '', text: 'Demo'
+            stage('Label Builds') {
+                steps {
+                    script {
+                        addShortText background: '', borderColor: 'white', color: 'red', link: '', text: 'Demo'
+                    }
                 }
             }
+
 
 
             stage('Check the code quality') {
