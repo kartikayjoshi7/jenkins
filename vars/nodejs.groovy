@@ -24,7 +24,7 @@ def call() {
                 steps {
                     script {
                         common.sonarQube()
-                        addShortText background: '', borderColor: '', color: 'red', link: '', text: 'Demo'
+
                     }
                 }
             }
