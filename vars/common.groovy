@@ -18,7 +18,6 @@ def publishArtifacts() {
 
 
 def prepareArtifacts() {
-    env.gitTag = GIT_BRANCH.split('/').last()
     if(env.PROG_LANG_NAME == "nodejs"  && env.PROG_LANG_VERSION == "16")
     {
         sh '''
