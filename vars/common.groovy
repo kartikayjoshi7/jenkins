@@ -6,10 +6,17 @@ def sonarQube() {
     println 'SonarCube Testing'
 }
 def publishArtifacts() {
-    if (env.GIT_BRANCH == '*tag*') {
-        println 'ran on tag'
-    }
-    else {
-        Utils.markStageSkippedForConditional('Publish Artifacts')
-    }
+//    if (env.GIT_BRANCH == '*tag*') {
+//        println 'ran on tag'
+//    }
+//    else {
+//        Utils.markStageSkippedForConditional('Publish Artifacts')
+//    }
+
+
+}
+
+
+def prepareArtifacts() {
+    println PROG_LANG
 }

@@ -8,6 +8,11 @@ def call() {
             pollSCM('H/2 * * * *')
         }
 
+
+        environment{
+            PROG_LANG= "nodejs"
+        }
+
         stages {
 
             stage('Label Builds') {
@@ -42,14 +47,19 @@ def call() {
                 }
             }
 
+
+
+
+
             stage('Publish Artifacts') {
                 when {
                     expression { sh ([returnStdout:true, script : 'echo ${GIT_BRANCH} | grep tags || true'])}
                 }
                 steps {
                     script {
-                       // common.publishArtifacts()
-                        println 'Publish Artifacts'
+                       common.prepareArtifacts()
+                       common.publishArtifacts()
+
                     }
                 }
             }
