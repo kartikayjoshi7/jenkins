@@ -21,8 +21,8 @@ def prepareArtifacts() {
     if(env.PROG_LANG_NAME == "nodejs"  && env.PROG_LANG_VERSION == "16")
     {
         sh '''
-            echo hello
-            echo bye
+            npm install
+            ls -ltr
         '''
     }
 }
