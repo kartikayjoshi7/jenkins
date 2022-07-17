@@ -9,8 +9,8 @@ def call() {
 //        }
 
         environment{
-            PROG_LANG_NAME = "golang"
-            PROG_LANG_VERSION = "1.17"
+            PROG_LANG_NAME = "angular"
+            PROG_LANG_VERSION = ""
             NEXUS = credentials('NEXUS')
         }
 
@@ -34,7 +34,7 @@ def call() {
                 }
             }
 
-    stage('Lint checks') {
+            stage('Lint checks') {
                 steps {
                     sh 'echo Lint checks'
                 }
