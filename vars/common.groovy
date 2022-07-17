@@ -55,7 +55,7 @@ def prepareArtifacts() {
             go mod init dispatch
             go get
             go build
-            zip -r ${COMPONENT}-${gitTag}.zip
+            zip -r ${COMPONENT}-${gitTag}.zip ${COMPONENT}
            
         '''
     }
