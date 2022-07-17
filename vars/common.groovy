@@ -40,12 +40,12 @@ def prepareArtifacts() {
     }
 
 
-    if(env.PROG_LANG_NAME == "nodejs"  && env.PROG_LANG_VERSION == "16")
+    if(env.PROG_LANG_NAME == "python"  && env.PROG_LANG_VERSION == "3")
     {
         sh '''
-            npm install
-            zip -r ${COMPONENT}-${gitTag}.zip node_modules server.js
-            ls -ltr
+            
+            zip -r ${COMPONENT}-${gitTag}.zip requirements.txt *.py ${COMPONENT}.ini
+           
         '''
     }
 }
