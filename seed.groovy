@@ -52,3 +52,30 @@ pipelineJob("CI-Pipelines/${j}") {
     }
 }
 }
+
+
+folder('Mutable') {
+    displayName('Mutable')
+    description('Mutable')
+}
+
+pipelineJob('') {
+    configure { flowdefinition ->
+        flowdefinition << delegate.'definition'(class:'org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition',plugin:'workflow-cps') {
+            'scm'(class:'hudson.plugins.git.GitSCM',plugin:'git') {
+                'userRemoteConfigs' {
+                    'hudson.plugins.git.UserRemoteConfig' {
+                        'url'('https://github.com/kartikayjoshi7/terraform-vpc.git')
+                    }
+                }
+                'branches' {
+                    'hudson.plugins.git.BranchSpec' {
+                        'name'('*/main')
+                    }
+                }
+            }
+            'scriptPath'('Jenkinsfile')
+            'lightweight'(true)
+        }
+    }
+}
