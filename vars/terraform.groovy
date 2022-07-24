@@ -5,7 +5,7 @@ def call() {
         }
 
 
-        environment {}
+      //  environment {}
 
 
         pipeline {
