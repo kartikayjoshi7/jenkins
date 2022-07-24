@@ -10,8 +10,7 @@ def call() {
         options {
             ansiColor('xterm')
         }
-        pipeline {
-            agent any
+
             parameters {
 
                 choice(name: 'ENVIRONMENT', choices: ['', 'dev', 'prod'], description: 'Pick environment')
@@ -49,4 +48,3 @@ def call() {
             }
         }
     }
-}
