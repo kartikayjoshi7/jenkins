@@ -7,7 +7,9 @@ def call() {
 
       //  environment {}
 
-
+        options {
+            ansiColor('xterm')
+        }
         pipeline {
             agent any
             parameters {
