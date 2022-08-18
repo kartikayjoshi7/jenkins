@@ -57,7 +57,7 @@ pipeline {
         }
 
 
-        stage('BACKEND') {
+//        stage('BACKEND') {
 //           parallel {
 
                 stage('CART') {
@@ -146,7 +146,7 @@ pipeline {
                 }
 
 //            }
-        }
+//        }
 
         stage('FRONTEND') {
             steps {
