@@ -43,6 +43,8 @@ pipelineJob("CI-Pipelines/${j}") {
                 'branches' {
                     'hudson.plugins.git.BranchSpec' {
                         'name'('*/tags/*')
+                    }
+                    'hudson.plugins.git.BranchSpec' {
                         'name'('*/main')
                     }
                 }
